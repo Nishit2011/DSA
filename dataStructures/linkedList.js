@@ -149,6 +149,34 @@ class LinkedList{
 
     }
 
+    removeNthNodeFromEnd(n){
+        let dummy = new Node(0)
+        dummy.next = this.head
+
+        let slow = dummy
+        let fast = dummy
+
+        for(let i=0;i<=n;i++){
+            if(!fast) return null
+            fast=fast.next
+        }
+
+         while(fast){
+        slow= slow.next
+        fast=fast.next
+    }
+
+    slow.next = this.slow.next.next
+
+    this.head= dummy.next
+    this.size--
+
+    return this
+    }
+
+   
+
+
 }
 
 module.exports = LinkedList
