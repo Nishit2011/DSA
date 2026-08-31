@@ -100,7 +100,7 @@ class BinaryTree{
         const result =[]
         const queue = [node]
 
-        while(queue.length.0){
+        while(queue.length>0){
             const levelSize = queue.length
             for(let i=0;i<levelSize;i++){
                 const currentNode = queue.shift()

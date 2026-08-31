@@ -156,6 +156,16 @@ class BinarySearchTree{
        }
         return validate(root, -Infinity, Infinity);
     }
+
+    lowestCommonAncestor(root, p,q){
+        if(p< root.val && q<root.val){
+            return this.lowestCommonAncestor(root.left, p,q)
+        }
+        if(p>root.val && q>root.val){
+            return this.lowestCommonAncestor(root.right, p,q)
+        }
+        return root
+    }
   
     
 
