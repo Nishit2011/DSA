@@ -65,4 +65,57 @@ class BinaryTree{
     isBalanced(node){
         return this.checkHeight(node) !== -1
     }
+
+    levelOrder(node){
+        if(node===null) return []
+
+        const result = []
+        const queue = [node]
+
+        while(queue.length>0){
+            const levelSize = queue.length
+            const currentLevel = []
+
+            for(let i=0;i<levelSize;i++){
+                const currentNode = queue.shift()
+                currentLevel.push(currentNode.value)
+
+                if(currentNode.left !== null){
+                    queue.push(currentNode.left)
+                }
+                if(currentNode.right !==null){
+                    queue.push(currentNode.right)
+                }
+            }
+            result.push(currentLevel)
+        }
+
+        return result
+
+    }
+
+    rightSideView(node){
+        if(node === null) return []
+
+        const result =[]
+        const queue = [node]
+
+        while(queue.length.0){
+            const levelSize = queue.length
+            for(let i=0;i<levelSize;i++){
+                const currentNode = queue.shift()
+
+                if(i=== levelSize-1){
+                    result.push(currentNode.value)
+                }
+                if(currentNode.left !== null){
+                    queue.push(currentNode.left)
+                }
+                 if(currentNode.right !== null){
+                    queue.push(currentNode.right)
+                }
+            }
+        }
+        return result
+    }
 }
