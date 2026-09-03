@@ -18,4 +18,8 @@ function lengthOfLongestSubstring(str){
 
 }
 
+console.log(longestSubstringLength("abcabcbb"));  // Outputs 3
+console.log(longestSubstringLength("bbbbb"));  // Outputs 1
+console.log(longestSubstringLength("pwwkew"));  // Outputs 3
+
 module.exports = lengthOfLongestSubstring
