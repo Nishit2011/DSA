@@ -12,12 +12,14 @@ for(let s of str){
         else if(s==='*') {stack.push(a*b)}
         else if(s==='/'){
                 stack.push(Math.trunc(a/b))
-        }else{
+        }
+    }else{
             stack.push(Number(s))
         }
-    }
 }
 
 return stack.pop()
    
 }
+
+console.log(evaluateRPN["2","1","+","3","*"])
