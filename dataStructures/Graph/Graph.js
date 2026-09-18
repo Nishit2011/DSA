@@ -36,4 +36,5 @@ removeVertex(vertex){
     }
     this.adjacencyList.delete(vertex)
 }
+
 }
