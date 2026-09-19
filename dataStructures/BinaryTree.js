@@ -118,4 +118,52 @@ class BinaryTree{
         }
         return result
     }
+
+    lowestCommonAncestor(node,p,q){
+        if(node===null) return null
+        if(node===p || node===q){
+            return node
+        }
+
+       const left = this.lowestCommonAncestor(node.left,p,q)
+       const right = this.lowestCommonAncestor(node.right, p, q)
+
+       if(left !== null && right !== null){
+        return node
+       }
+       return left !==null ? left: right
+    }
+    pathSum(node, targetSum){
+        if(node ===null) return false
+
+        if(node.left === null && node.right === null){
+            return node.value === target
+        }
+
+        const remainingSum = targetSum - node.value
+        return(
+            this.pathSum(node.left, remainingSum) ||
+            this.pathSum(node.right, remainingSum)
+        )
+
+
+    }
+    isSymmetric(node){
+        if(node === null) return true
+        this.isMirror(node.left, node.right)
+    }
+
+    isMirror(left, right){
+        if(left === null && right === null) return true
+        if(left === null || right === null) return false
+
+        if(left.value !== right.value){
+            return false
+        }
+
+        return (
+            this.isMirror(left.left, right.right) &&
+            this.isMirror(left.right, right.left)
+        )
+    }
 }
