@@ -14,7 +14,7 @@ function integerToRoman(num){
     let result = ""
     
     for(let i=0;i<values.length;i++){
-        if(num>values[i]){
+        if(num>=values[i]){
             result +=  symbols[i]
             num -= values[i]
         }
