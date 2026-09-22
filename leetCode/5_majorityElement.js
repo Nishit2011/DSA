@@ -14,3 +14,10 @@ function solve(nums){
     }
     return candidate
 }
+
+
+/**
+ * 
+ * [2,2,2,2,3,5]
+ * 
+ */

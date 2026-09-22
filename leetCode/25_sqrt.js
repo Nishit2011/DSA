@@ -4,7 +4,7 @@ function solve(x){
     let answer =0
 
 
-    while(left<right){
+    while(left<=right){
         let mid = Math.floor((left+right)/2)
 
         if(mid*mid <= x){

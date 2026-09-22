@@ -167,6 +167,65 @@ class BinarySearchTree{
         return root
     }
 
+    kthSmallest(root,k){
+        let count =0
+        let result = null
+
+        function inOrder(node){
+            if(node === null ||  result !== null){
+                return
+            }
+            inOrder(root.left)
+            count++
+            if(count === k){
+                result = node.val
+            }
+
+            inOrder(root.right)
+        }
+        inOrder(root)
+        return result
+    }
+
+    sortedArrayToBST(arr){
+        function buildBST(left, right){
+            if(left>right){
+                return false
+            }
+
+            let mid = Math.floor(left+right/2)
+            const node = new BSTNode(arr[mid])
+
+            node.left = buildBST(left, mid-1)
+            node.right = buildBST(mid+1 , right)
+            return node
+
+        }
+
+        return buildBST(0, arr.length - 1)
+    }
+
+    minAbsoluteDifference(root){
+        let minDiff = Infinity
+        let previous = null
+
+        function inOrder(node){
+            if(node === null){
+                return 
+            }
+
+            inOrder(node.left)
+
+            if(previous !== null){
+                previous = Math.min(minDiff, node.val-previous)
+            }
+            previous = node.val
+            inOrder(node.right)
+        }
+        inOrder(root)
+        return minDiff
+        
+    }
   
     
 

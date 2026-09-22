@@ -19,3 +19,25 @@ function bfs(graph, start){
     }
 
 }
+
+
+
+/**
+ * 
+ *      A
+       / \
+      B   C
+     / \
+    D   E
+
+   graph = {
+    A: ["B", "C"],
+    B: ["D", "E"],
+    C: [],
+    D: [],
+    E: []
+}
+
+
+A-B-C-D-E
+ */

@@ -16,3 +16,20 @@ function dfs(graph, start){
     explore(start)
 }
 
+
+/**
+ * 
+ *      A
+       / \
+      B   C
+     / \
+    D   E
+
+   graph = {
+    A: ["B", "C"],
+    B: ["D", "E"],
+    C: [],
+    D: [],
+    E: []
+}
+ */

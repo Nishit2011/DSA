@@ -9,7 +9,8 @@ function validParentheses(s){
         }else if(char=='('){
             stack.push(')')
         }else{
-            if(stack.pop() !== char){
+            const expectedChar = stack.pop();
+            if(expectedChar !== char){
                 return false
             }
         }
