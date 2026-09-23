@@ -73,14 +73,14 @@ class LinkedList{
         }
     }
     removeFrom(index){
-        if(index<0 || index > this.size ) return 'Out of Bound'
+        if(index<0 || index >= this.size ) return 'Out of Bound'
         let removedNode;
         if(index === 0){
             removedNode = this.head
             this.head = this.head.next
         }else{
             let prev = this.head
-            for(let i=0;i<index-1; ){
+            for(let i=0;i<index-1;i++ ){
                 prev = prev.next
             }
             removedNode = prev.next
@@ -90,21 +90,44 @@ class LinkedList{
         return removedNode.value
     }
 
-    removeFrom(value){
-       
+    removeByValue(value){
+           if(this.isEmpty()) return false
+
+    if(this.head.value === value){
+        this.head = this.head.next
+        this.size--
+        return true
+    }
+
+    let prev = this.head
+
+    while(prev.next && prev.next.value !== value){
+        prev = prev.next
+    }
+
+    if(prev.next){
+        prev.next = prev.next.next
+        this.size--
+        return true
+    }
+
+    return false
     }
 
     //reversing a linkedlist
-    reverse(){
-        let prev =null
-        let curr = this.head
-        while(curr){
-           curr.next = prev
-           prev = curr
-           curr = next
-        }
-        this.head = prev
+reverse(){
+    let prev = null
+    let curr = this.head
+
+    while(curr){
+        let next = curr.next
+        curr.next = prev
+        prev = curr
+        curr = next
     }
+
+    this.head = prev
+}
 
     mergeList(l2){
         let l1Curr = this.head
@@ -126,9 +149,9 @@ class LinkedList{
             mergedList.append(l1Curr.value)
             l1Curr = l1Curr.next
         }
-         while (list2Current) {
-        mergedList.append(list2Current.value);
-        list2Current = list2Current.next;
+         while (l2Curr) {
+        mergedList.append(ll2Curr.value);
+        l2Curr = l2Curr.next;
     }
 
     return mergedList;
@@ -150,29 +173,31 @@ class LinkedList{
     }
 
     removeNthNodeFromEnd(n){
-        let dummy = new Node(0)
-        dummy.next = this.head
+    let dummy = new Node(0)
+    dummy.next = this.head
 
-        let slow = dummy
-        let fast = dummy
+    let slow = dummy
+    let fast = dummy
 
-        for(let i=0;i<=n;i++){
-            if(!fast) return null
-            fast=fast.next
-        }
-
-         while(fast){
-        slow= slow.next
-        fast=fast.next
+    // Create gap of n
+    for(let i = 0; i < n; i++){
+        fast = fast.next
     }
 
-    slow.next = this.slow.next.next
+    // Move until fast reaches last node
+    while(fast.next){
+        slow = slow.next
+        fast = fast.next
+    }
 
-    this.head= dummy.next
+    // Remove target
+    slow.next = slow.next.next
+
+    this.head = dummy.next
     this.size--
 
     return this
-    }
+}
 
    
 

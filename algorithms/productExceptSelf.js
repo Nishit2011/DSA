@@ -21,4 +21,45 @@ function productOfSelf(arr){
 module.exports = productOfSelf
 
 
-//[1,2,3,4]
+/**
+ * Product of Array Except Self
+
+Goal: For every index, calculate the product of all elements except itself.
+
+Example:
+
+[1,2,3,4]
+→ [24,12,8,6]
+Pattern
+
+Prefix Product + Suffix Product
+
+Steps
+
+Left → Right
+
+answer[i] = product of everything LEFT of i
+
+Update:
+
+leftProduct *= arr[i]
+
+Right → Left
+
+answer[i] *= product of everything RIGHT of i
+
+Update:
+
+rightProduct *= arr[i]
+🧠 Remember
+
+First pass: put the LEFT product into answer.
+Second pass: multiply by the RIGHT product.
+
+So:
+
+answer[i] = LEFT × RIGHT
+
+Time: O(n)
+Space: O(n) for the output array.
+ */
