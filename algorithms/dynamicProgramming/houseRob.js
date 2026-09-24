@@ -17,3 +17,6 @@ function rob(nums){
 
     return dp[nums.length-1]
 }
+
+//max money through house i
+//base case dp[0], dp[1]
