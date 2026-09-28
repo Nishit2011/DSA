@@ -8,3 +8,10 @@ function solve(prices){
     }
     return profit
 }
+
+/**
+ * 
+ * Since multiple transactions are allowed, I take advantage of every positive price movement. 
+ * If today's price is greater than yesterday's, I add the difference to the total profit. 
+ * This effectively captures every profitable upward movement without needing to explicitly track buy and sell transactions.
+ */

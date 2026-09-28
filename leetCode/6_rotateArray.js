@@ -16,3 +16,11 @@ function reverse(nums, left, right){
         right--
     }
 }
+
+/**
+ * 
+ * I use the three-reversal technique. First, I normalize k using k % n. 
+ * Then I reverse the entire array, which brings the last k elements to the front but in reverse order. 
+ * I reverse the first k elements to restore their order, and finally reverse the remaining elements. 
+ * This gives the array rotated by k positions.
+ */

@@ -18,6 +18,6 @@ function solve(str){
 
         result.push(str.substring(i+1, end+1))
     }
-    return result
+    return result.join("")
 
 }
