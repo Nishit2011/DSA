@@ -11,6 +11,55 @@ class BinaryTree{
         this.root = null
     }
 
+    insert(value){
+        const newNode = new Node(value)
+
+        if(this.root === null){
+            this.root = newNode
+            return 
+        }
+
+        const queue = [this.root]
+
+        while(queue.length>0){
+            const current = queue.shift()
+
+            if(current.left === null){
+                current.left = newNode
+                return
+            }
+            queue.push(current.left)
+
+            if(current.right === null){
+                current.right = newNode
+                return
+            }
+            queue.push(current.right)
+        }
+
+       
+    }
+
+    print(){
+        if(this.root === null){
+            console.log("Tree is empty")
+        }
+        const queue = [this.root]
+
+        while(queue.length>0){
+            const current = queue.shift()
+
+            console.log(current.value)
+
+            if(current.left !== null){
+                queue.push(current.left)
+            }
+            if(current.right !== null){
+                queue.push(current.right)
+            }
+        }
+    }
+
     invert(node){
         if(node===null){
             return null
@@ -165,5 +214,28 @@ class BinaryTree{
             this.isMirror(left.left, right.right) &&
             this.isMirror(left.right, right.left)
         )
+    }
+
+
+    //build tree from preorder(node->left->right) and inorder(left->node->right)
+
+    buildTree(preOrder, inOrder){
+        if(preOrder.length === 0 || inOrder.length === 0){
+            return null
+        }
+
+        const rootValue = preOrder[0]
+        const root = new Node(rootValue)
+
+        const rootIndex = inOrder.indexOf(rootValue)
+
+        const leftInOrder = inOrder.slice(0, rootIndex)
+        const rightInOrder = inOrder.slice(rootIndex+1)
+
+        root.left = this.buildTree(preOrder.slice(1, rootIndex+1), leftInOrder)
+        root.right = this.buildTree(preOrder.slice(rootIndex+1), rightInOrder)
+
+        return root
+
     }
 }
