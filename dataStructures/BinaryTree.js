@@ -3,6 +3,7 @@ class Node{
         this.value = value
         this.right = null
         this.left = null
+        this.next = null
     }
 }
 
@@ -238,4 +239,92 @@ class BinaryTree{
         return root
 
     }
+
+    buildTreeFromPostorder(inOrder, postOrder){
+        if(inOrder.length === 0 || postOrder.length === 0){
+            return null
+        }
+
+        const rootValue = postOrder[postOrder.length - 1]
+        const root = new Node(rootValue)
+
+        const rootIndex = inOrder.indexOf(rootValue)
+
+        root.left = this.buildTreeFromPostorder(inOrder.slice(0, rootIndex), postOrder.slice(0, rootIndex))
+        root.right = this.buildTreeFromPostorder(inOrder.slice(rootIndex+1), postOrder.slice(rootIndex, -1 ))
+
+        return root
+    }
+
+    connectNextPointers(root){
+
+        if(root === null){
+            return null
+        }
+
+        let currentLevel = root
+
+        while(currentLevel !== null){
+
+            const dummy = new Node(0)
+            const tail = dummy
+
+            let current = currentLevel
+
+            while(current.left !== null){
+                tail.next = current.left
+                tail = tail.next
+            }
+
+            if(current.right !== null){
+                tail.next = current.right
+                tail = tail.next
+            }
+
+            currentLevel = dummy.next
+        }
+
+        return root
+
+    }
+
+    countNodes(node){
+        if(node === null){
+            return 0
+        }
+
+        let leftHeight =0
+        let current = node
+
+        while(current !== null){
+            leftHeight++
+            current = current.left
+        }
+
+        let rightHeight = 0
+    
+         current = node
+        while(current !== null){
+            rightHeight++
+            current = current.right
+        }
+
+        if(leftHeight === rightHeight){
+            return Math.pow(2, leftHeight -1)
+        }
+
+        return (
+            1+ this.countNodes(node.left) + this.countNodes(node.right)
+        )
+
+    //     1                   
+    //    / \
+    //   2   3
+    //  / \  /
+    // 4  5 6
+    }
+
+
+
+
 }
