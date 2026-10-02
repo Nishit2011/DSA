@@ -1,3 +1,8 @@
+/**
+ * Problem: Find the maximum profit with unlimited buy-sell stock transactions.
+ * Trick: Greedy — add every positive day-over-day price difference (capture every upward movement).
+ * Time: O(n) | Space: O(1)
+ */
 function solve(prices){
     let profit =0
 

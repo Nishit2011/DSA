@@ -1,3 +1,8 @@
+/**
+ * Problem: If a cell is 0, set its entire row and column to 0 in-place.
+ * Trick: Use the first row and first column as markers. Record whether they were originally zero first, then use them to zero out the rest.
+ * Time: O(m*n) | Space: O(1)
+ */
 function solve(matrix){
     const rows = matrix.length
     const cols = matrix.length

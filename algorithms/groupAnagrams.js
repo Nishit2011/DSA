@@ -1,3 +1,8 @@
+/**
+ * Problem: Group an array of strings into buckets of anagrams.
+ * Trick: Sort each word alphabetically to get a canonical key; group by that key in a Map.
+ * Time: O(n * k log k) where k = max word length | Space: O(n*k)
+ */
 function groupAnagrams(arr){
 
     let map = new Map()

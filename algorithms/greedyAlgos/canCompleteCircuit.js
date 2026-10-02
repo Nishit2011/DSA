@@ -1,3 +1,8 @@
+/**
+ * Problem: Given gas stations with gas amounts and costs, find the starting station to complete a circular route.
+ * Trick: If tank < 0, reset start = i+1 and tank = 0. If total gas >= total cost, a valid start exists.
+ * Time: O(n) | Space: O(1)
+ */
 //const gas = [1, 2, 3, 4, 5];
 //const cost = [3, 4, 5, 1, 2];
 

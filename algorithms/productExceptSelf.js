@@ -1,3 +1,8 @@
+/**
+ * Problem: Return an array where each element is the product of all other elements (no division allowed).
+ * Trick: Two passes — first pass fills answer[i] with prefix product (everything left); second pass multiplies in suffix product (everything right).
+ * Time: O(n) | Space: O(n) for output array
+ */
 function productOfSelf(arr){
     console.log(arr)
     if(arr.length ===0) return false

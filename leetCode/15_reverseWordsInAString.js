@@ -1,3 +1,8 @@
+/**
+ * Problem: Reverse the order of words in a string (strip extra spaces).
+ * Trick: Scan from the end — skip spaces, capture each word using two pointers, push to result, then join.
+ * Time: O(n) | Space: O(n)
+ */
 function solve(str){
     let i = str.length-1
     let result = []

@@ -1,3 +1,8 @@
+/**
+ * Problem: Return all possible subsets of an array.
+ * Trick: Backtracking — snapshot current state into results, then try adding each remaining element, recurse, then pop (undo).
+ * Time: O(n * 2^n) | Space: O(n * 2^n)
+ */
 function subsets(nums){
     let result = []
     let current = []

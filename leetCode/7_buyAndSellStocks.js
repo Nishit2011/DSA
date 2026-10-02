@@ -1,3 +1,8 @@
+/**
+ * Problem: Find the maximum profit from a single buy-sell stock transaction.
+ * Trick: Track running minimum price; compute profit if sold today; update max profit.
+ * Time: O(n) | Space: O(1)
+ */
 function solve(prices) {
     let maxProfit = 0
     let lowestPrice = Infinity

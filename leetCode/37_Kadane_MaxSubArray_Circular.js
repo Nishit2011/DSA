@@ -1,3 +1,8 @@
+/**
+ * Problem: Find the maximum sum subarray in a circular array.
+ * Trick: Answer is max(normal Kadane result, totalSum - minSubarraySum). The circular case equals total minus the minimum middle subarray.
+ * Time: O(n) | Space: O(1)
+ */
 function solve(nums){
     let currentMax = nums[0]
     let maxSum = nums[0]

@@ -1,3 +1,8 @@
+/**
+ * Problem: Compute the integer square root of x (floor).
+ * Trick: Binary search from 0 to x — find largest mid where mid*mid <= x.
+ * Time: O(log x) | Space: O(1)
+ */
 function solve(x){
     let left = 0
     let right = x

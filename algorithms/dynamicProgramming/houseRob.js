@@ -1,3 +1,8 @@
+/**
+ * Problem: Rob houses for maximum money without robbing two adjacent ones.
+ * Trick: dp[i] = max(dp[i-1], nums[i] + dp[i-2]) — either skip this house or rob it and add best from two houses back.
+ * Time: O(n) | Space: O(n)
+ */
 function rob(nums){
     if(nums.length===1){
         return nums[0]

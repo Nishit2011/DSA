@@ -2,6 +2,11 @@
  * @param {number[]} temp
  * @return {number[]}
  */
+/**
+ * Problem: For each day, find how many days until a warmer temperature (return 0 if none).
+ * Trick: Monotonic decreasing stack of indices — when a warmer day is found, pop all cooler days and record their wait time (current_index - popped_index).
+ * Time: O(n) | Space: O(n)
+ */
 var dailyTemperatures = function(temp) {
     let stack = [];
     let n = temp.length;

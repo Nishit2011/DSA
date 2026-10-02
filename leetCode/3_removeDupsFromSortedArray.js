@@ -1,3 +1,8 @@
+/**
+ * Problem: Remove duplicates from a sorted array in-place, return count of unique elements.
+ * Trick: Write pointer k starts at 1. Copy nums[i] to nums[k] only if it differs from nums[k-1].
+ * Time: O(n) | Space: O(1)
+ */
 function solve(nums){
     let k=1
     for(let i=1;i<nums.length;i++){

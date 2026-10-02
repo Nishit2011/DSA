@@ -1,3 +1,8 @@
+/**
+ * Problem: Return all elements of a matrix in spiral order.
+ * Trick: Four boundary pointers (top, bottom, left, right) — traverse top row, right col, bottom row, left col, then shrink boundaries inward.
+ * Time: O(m*n) | Space: O(m*n)
+ */
 function spiralOrder(matrix){
     const result = []
 

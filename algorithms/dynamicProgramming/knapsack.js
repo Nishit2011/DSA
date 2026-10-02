@@ -1,3 +1,8 @@
+/**
+ * Problem: Given weights and values, find the maximum value fitting within a weight capacity (0/1 Knapsack).
+ * Trick: 2D DP — dp[i][w] = max value using first i items with capacity w. Either skip item or include it: max(dp[i-1][w], val + dp[i-1][w-weight]).
+ * Time: O(n*W) | Space: O(n*W)
+ */
 function solve(weights, values, capacity){
     const n = weights.length
     const dp = Array.from({length:n+1}, ()=> new Array(capacity+1))

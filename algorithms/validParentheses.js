@@ -1,3 +1,8 @@
+/**
+ * Problem: Check if a string of brackets is valid (properly opened and closed).
+ * Trick: Push the expected closing bracket onto the stack when you see an opener — makes matching trivial on close.
+ * Time: O(n) | Space: O(n)
+ */
 function validParentheses(s){
     const stack = []
 

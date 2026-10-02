@@ -1,3 +1,8 @@
+/**
+ * Problem: Can you reach the last index given jump lengths at each position?
+ * Trick: Track max reachable index — return false if current index exceeds it.
+ * Time: O(n) | Space: O(1)
+ */
 function solve(nums){
     let farthest = 0
 

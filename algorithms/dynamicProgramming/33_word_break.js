@@ -1,3 +1,8 @@
+/**
+ * Problem: Determine if a string can be segmented into words from a dictionary.
+ * Trick: 1D DP — dp[i] = true if s[0..i-1] can be formed. For each i, try all splits j: if dp[j] && s[j..i] is in the word set, mark dp[i] = true.
+ * Time: O(n^2) | Space: O(n)
+ */
 function wordBreak(s, wordDict) {
 
     const wordSet = new Set(wordDict);

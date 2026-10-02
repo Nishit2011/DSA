@@ -1,3 +1,8 @@
+/**
+ * Problem: Sort an array using the merge sort algorithm.
+ * Trick: Divide and conquer — recursively split array in half, then merge sorted halves by comparing elements.
+ * Time: O(n log n) | Space: O(n)
+ */
 function mergeSort(arr){
 
     let mid = Math.floor(arr.length/2)

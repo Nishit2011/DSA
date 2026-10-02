@@ -1,3 +1,8 @@
+/**
+ * Problem: Evaluate a postfix (Reverse Polish Notation) expression.
+ * Trick: Use a stack — push numbers; on operator, pop two operands, compute, and push the result.
+ * Time: O(n) | Space: O(n)
+ */
 function evaluateRPN(str){
 
 let stack =[]

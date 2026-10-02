@@ -1,3 +1,8 @@
+/**
+ * Problem: Given heights, find two lines that together with the x-axis form a container holding the most water.
+ * Trick: Two pointers from both ends; always move the pointer with the shorter height (the bottleneck).
+ * Time: O(n) | Space: O(1)
+ */
 function maxArea(height){
 
     let maxWater =0

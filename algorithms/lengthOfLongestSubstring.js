@@ -1,3 +1,8 @@
+/**
+ * Problem: Find the length of the longest substring without repeating characters.
+ * Trick: Sliding window with a Set — when a duplicate is found, shrink window from left until it's gone.
+ * Time: O(n) | Space: O(min(n, alphabet))
+ */
 function lengthOfLongestSubstring(str){
     let longest =0
     let left =0

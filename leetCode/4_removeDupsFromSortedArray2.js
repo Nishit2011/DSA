@@ -1,3 +1,8 @@
+/**
+ * Problem: Remove duplicates from a sorted array in-place allowing at most 2 copies, return new length.
+ * Trick: Write pointer k starts at 0. Copy when k < 2 or nums[i] !== nums[k-2] (check 2 positions back).
+ * Time: O(n) | Space: O(1)
+ */
 function solve(nums){
     let k=0
     for(let i=0;i<nums.length;i++){

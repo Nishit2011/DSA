@@ -1,3 +1,8 @@
+/**
+ * Problem: Merge all overlapping intervals.
+ * Trick: Sort by start time. For each interval, if it overlaps the last in result (start <= last end), extend the end; otherwise push as new.
+ * Time: O(n log n) | Space: O(n)
+ */
 function mergeIntervals(intervals){
 
     intervals.sort((a,b)=> a[0] - b[0])

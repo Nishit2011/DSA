@@ -1,3 +1,8 @@
+/**
+ * Problem: Rotate an array to the right by k steps in-place.
+ * Trick: Three-reversal technique — reverse all → reverse first k → reverse remaining k to n-1.
+ * Time: O(n) | Space: O(1)
+ */
 function rotate(nums, k){
     let n = nums.length
 

@@ -1,3 +1,8 @@
+/**
+ * Problem: Find the minimum number of coins to make a given amount.
+ * Trick: Bottom-up DP — dp[i] = min(dp[i], dp[i - coin] + 1) for each coin. Base case dp[0] = 0, rest Infinity.
+ * Time: O(amount * coins) | Space: O(amount)
+ */
 function coinChange(coins, amount) {
 
     const dp = new Array(amount + 1).fill(Infinity)

@@ -1,3 +1,8 @@
+/**
+ * Problem: Find the length of the longest consecutive number sequence in an unsorted array.
+ * Trick: Store all numbers in a Set. Only start counting from a number that has no predecessor (num-1 not in set) to avoid redundant work.
+ * Time: O(n) | Space: O(n)
+ */
 function longestConsecutiveSequence(arr){
 
     if(arr.length===0) return false

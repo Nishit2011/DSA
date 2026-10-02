@@ -1,3 +1,8 @@
+/**
+ * Problem: Rotate an n×n matrix 90 degrees clockwise in-place.
+ * Trick: Transpose (swap [i][j] with [j][i]) then reverse each row.
+ * Time: O(n^2) | Space: O(1)
+ */
 function rotateImg(matrix){
     let transposeResult = transpose(matrix)
 

@@ -1,3 +1,8 @@
+/**
+ * Problem: Find the H-Index — the largest h such that h papers have at least h citations.
+ * Trick: For every candidate h (0 to n), count papers with citations >= h; if count >= h, update result.
+ * Time: O(n^2) | Space: O(1)
+ */
 function hIndex(citations){
     let result =0
 

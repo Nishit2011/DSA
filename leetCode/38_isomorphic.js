@@ -1,3 +1,8 @@
+/**
+ * Problem: Check if two strings are isomorphic (each char in s maps consistently to a char in t and vice versa).
+ * Trick: Two bidirectional Maps (s->t and t->s) — verify consistency of both mappings on each character.
+ * Time: O(n) | Space: O(1) (bounded alphabet)
+ */
 var isIsomorphic = function(s, t) {
     if (s.length !== t.length) return false;
 

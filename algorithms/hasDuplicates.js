@@ -1,3 +1,8 @@
+/**
+ * Problem: Check if an array contains any duplicate values.
+ * Trick: Insert into a Map; if the element already exists, return true immediately.
+ * Time: O(n) | Space: O(n)
+ */
 function containsDups(arr){
     let map = new Map()
 

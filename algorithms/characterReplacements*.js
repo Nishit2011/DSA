@@ -1,3 +1,8 @@
+/**
+ * Problem: Find the length of the longest substring where you can replace at most k characters to make all chars the same.
+ * Trick: Sliding window — track the max frequency character in the window. If (windowSize - maxFreq) > k, shrink from left.
+ * Time: O(n) | Space: O(1) (26 chars)
+ */
 function characterReplacement(s, k) {
     let left = 0;
     let maxFrequency = 0;

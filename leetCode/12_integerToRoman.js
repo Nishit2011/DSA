@@ -1,3 +1,8 @@
+/**
+ * Problem: Convert an integer to a Roman numeral string.
+ * Trick: Greedy — iterate through values in descending order (including subtractive cases like 900, 400); subtract and append symbol while num >= value.
+ * Time: O(1) (bounded by max Roman value 3999) | Space: O(1)
+ */
 function integerToRoman(num){
     const values = [
          1000, 900, 500, 400,

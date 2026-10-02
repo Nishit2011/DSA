@@ -1,3 +1,8 @@
+/**
+ * Problem: Check if an integer is a palindrome without converting to a string.
+ * Trick: Reverse only the second half of the number. Compare for even (equal halves) or odd (remove middle digit) length.
+ * Time: O(log n) | Space: O(1)
+ */
 function solve(num) {
     // Negative numbers are not palindromes
     if (num < 0) {

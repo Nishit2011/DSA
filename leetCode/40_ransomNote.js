@@ -3,6 +3,11 @@
  * @param {string} magazine
  * @return {boolean}
  */
+/**
+ * Problem: Check if a ransom note can be constructed from letters in a magazine.
+ * Trick: Count character frequencies of magazine in a Map; decrement for each char in ransomNote; return false if any count hits 0.
+ * Time: O(m+n) | Space: O(1) (26 chars)
+ */
 var canConstruct = function(ransomNote, magazine) {
     let map = new Map()
 

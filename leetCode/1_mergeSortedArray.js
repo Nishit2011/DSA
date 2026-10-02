@@ -1,3 +1,8 @@
+/**
+ * Problem: Merge two sorted arrays into the first array in-place (nums1 has extra space at the end).
+ * Trick: Merge from the end backwards using three pointers (i, j, k) to avoid overwriting valid elements.
+ * Time: O(m+n) | Space: O(1)
+ */
 function merge(nums1, m, nums2,n){
     let i = m-1
     let j= n-1

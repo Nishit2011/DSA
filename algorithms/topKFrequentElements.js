@@ -1,3 +1,8 @@
+/**
+ * Problem: Return the k most frequent elements from an array.
+ * Trick: Build a frequency Map, sort by frequency descending, slice the top k.
+ * Time: O(n log n) | Space: O(n)
+ */
 function freq(arr,k){
 
     let map = new Map()

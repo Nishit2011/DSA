@@ -1,3 +1,8 @@
+/**
+ * Problem: Find the minimum length subarray with sum >= target.
+ * Trick: Sliding window — expand right, and when sum >= target shrink from left while recording the minimum length.
+ * Time: O(n) | Space: O(1)
+ */
 function minSubArray(target, nums){
     let left = 0
     let sum = 0

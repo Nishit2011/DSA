@@ -226,6 +226,24 @@ class BinarySearchTree{
         return minDiff
         
     }
+
+    sortedArrayToBST(arr){
+        function buildBST(left, right){
+            if(left<right){
+                return null
+            }
+
+            const mid = Math.floor((left+right)/2)
+            const node = new BSTNode(arr[mid])
+
+            node.left = buildBST(left,mid-1)
+            node.right(mid+1, right)
+
+            return node
+        }
+
+        return buildBST(0, arr.length-1)
+    }
   
     
 

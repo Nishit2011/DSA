@@ -1,3 +1,8 @@
+/**
+ * Problem: Check if a string (ignoring non-alphanumeric chars) is a palindrome.
+ * Trick: Strip non-word chars with regex, then use two pointers (left/right) converging inward.
+ * Time: O(n) | Space: O(n) for cleaned string
+ */
 function palindrome(str){
      str = str.replace(/\W/ig, "")
      console.log(str)

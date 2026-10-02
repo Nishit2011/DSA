@@ -1,3 +1,8 @@
+/**
+ * Problem: Find the longest common prefix among all strings in an array.
+ * Trick: Use the first string as reference; for each character position, verify all other strings match at that position.
+ * Time: O(n*m) where m = shortest string length | Space: O(1)
+ */
 function lengthOfCommonPrefix(strs){
     if(strs.length === 0 ) return false
 

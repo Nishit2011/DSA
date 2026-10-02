@@ -1,3 +1,8 @@
+/**
+ * Problem: Find the first and last positions of a target in a sorted array.
+ * Trick: Two binary searches — one biased left (record and narrow right) and one biased right (record and narrow left).
+ * Time: O(log n) | Space: O(1)
+ */
 function search(arr, target){
     
 

@@ -1,3 +1,8 @@
+/**
+ * Problem: Check if string s is a subsequence of string t (same order, not necessarily consecutive).
+ * Trick: Two pointers — advance i (pointer for s) only on a match; always advance j (pointer for t). Return i === s.length.
+ * Time: O(t.length) | Space: O(1)
+ */
 function subseq(s,t){
 
     let i =0

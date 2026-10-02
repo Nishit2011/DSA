@@ -1,3 +1,8 @@
+/**
+ * Problem: Given two strings, check if one is an anagram of the other.
+ * Trick: Count character frequencies of s1 in a Map, then decrement for each char in s2. Valid if map ends empty.
+ * Time: O(n) | Space: O(1) (at most 26 chars)
+ */
 function validAnagram(s1,s2){
     if(s1.length !== s2.length) return false
    let map = new Map()

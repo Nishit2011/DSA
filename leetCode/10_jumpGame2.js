@@ -1,3 +1,8 @@
+/**
+ * Problem: Return the minimum number of jumps to reach the last index.
+ * Trick: Greedy — when current index reaches currentEnd, commit a new jump and update currentEnd to farthest.
+ * Time: O(n) | Space: O(1)
+ */
 function solve(nums){
     let currentEnd =0 //The furthest index I can reach using my current number of jumps.
     let jumps = 0 //Number of jumps we have committed to.

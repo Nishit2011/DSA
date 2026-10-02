@@ -1,3 +1,8 @@
+/**
+ * Problem: Find the index of a target in a sorted array.
+ * Trick: Classic binary search — shrink search space by halving based on midpoint comparison.
+ * Time: O(log n) | Space: O(1)
+ */
 function binarySearch(arr,target){
     let left=0
     let right = arr.length-1

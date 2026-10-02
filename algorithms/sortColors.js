@@ -1,3 +1,8 @@
+/**
+ * Problem: Sort an array of 0s, 1s, and 2s in-place (Dutch National Flag).
+ * Trick: Three pointers (low, mid, high). Swap 0s left, 2s right, 1s stay. Don't advance mid after swapping a 2.
+ * Time: O(n) | Space: O(1)
+ */
 function sortColors(nums){
     let low=0
     let mid =0 

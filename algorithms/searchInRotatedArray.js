@@ -1,3 +1,8 @@
+/**
+ * Problem: Search for a target in a rotated sorted array.
+ * Trick: Modified binary search — at every step, one half is guaranteed sorted. Check if target falls in the sorted half; if so search there, otherwise search the other.
+ * Time: O(log n) | Space: O(1)
+ */
 function solve(arr, target){
     let left =0
     let right = arr.length-1

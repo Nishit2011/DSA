@@ -1,3 +1,8 @@
+/**
+ * Problem: Insert a new interval into a sorted list of non-overlapping intervals and merge if needed.
+ * Trick: Three phases — add all intervals ending before the new one, merge all overlapping ones, then add the rest.
+ * Time: O(n) | Space: O(n)
+ */
 function insert(intervals, newInterval) {
     const result = [];
     let i = 0;

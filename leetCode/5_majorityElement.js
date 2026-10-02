@@ -1,3 +1,8 @@
+/**
+ * Problem: Find the element that appears more than n/2 times.
+ * Trick: Boyer-Moore Voting — maintain a candidate and counter. If counter is 0, set new candidate. Increment if same, decrement if different.
+ * Time: O(n) | Space: O(1)
+ */
 function solve(nums){
     let candidate = null
     let count = 0

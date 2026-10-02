@@ -199,6 +199,32 @@ reverse(){
     return this
 }
 
+    sortList(head){
+        if(!head || !head.next){
+            return null
+        }
+        let slow = head
+        let fast = head
+        let prev = null
+
+        while(fast && fast.next){
+            prev = slow
+            slow = slow.next
+            fast = fast.next.next
+        }
+
+        prev.next = null
+
+        let left = sortList(head)
+        let right = sortList(slow)
+
+        return this.merge(left, right)
+    }
+
+    merge(l1,l2){}
+
+
+
    
 
 

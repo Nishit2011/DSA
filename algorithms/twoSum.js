@@ -1,3 +1,8 @@
+/**
+ * Problem: Given an array and a target, return two numbers that add up to the target.
+ * Trick: Use a HashMap — store each element, check if its complement (target - current) already exists.
+ * Time: O(n) | Space: O(n)
+ */
 function twoSum(arr,target){
     console.log(arr,target)
     if(arr.length === 0){

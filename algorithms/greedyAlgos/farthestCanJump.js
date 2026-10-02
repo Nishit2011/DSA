@@ -1,3 +1,8 @@
+/**
+ * Problem: Given jump lengths at each index, determine if you can reach the last index.
+ * Trick: Track farthest reachable index. If current index ever exceeds farthest, return false.
+ * Time: O(n) | Space: O(1)
+ */
 //You are given an array where nums[i] tells you the maximum distance you can jump forward from index i. Determine whether you can reach the last index.
 
 //nums = [2, 3, 1, 1, 4]

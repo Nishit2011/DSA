@@ -1,3 +1,8 @@
+/**
+ * Problem: Return all permutations of an array.
+ * Trick: Backtracking with a used[] boolean array — try each unused element at every position, mark used before recursion, unmark after.
+ * Time: O(n * n!) | Space: O(n * n!)
+ */
 function permute(nums){
 
     let result =[]
