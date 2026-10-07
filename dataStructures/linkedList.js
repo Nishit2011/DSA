@@ -199,29 +199,72 @@ reverse(){
     return this
 }
 
-    sortList(head){
-        if(!head || !head.next){
-            return null
-        }
-        let slow = head
-        let fast = head
-        let prev = null
+    sortList(head) {
 
-        while(fast && fast.next){
-            prev = slow
-            slow = slow.next
-            fast = fast.next.next
-        }
-
-        prev.next = null
-
-        let left = sortList(head)
-        let right = sortList(slow)
-
-        return this.merge(left, right)
+    // Base case
+    if (!head || !head.next) {
+        return head
     }
 
-    merge(l1,l2){}
+    // Find middle
+    let slow = head
+    let fast = head
+    let prev = null
+
+    while (fast && fast.next) {
+        prev = slow
+        slow = slow.next
+        fast = fast.next.next
+    }
+
+    // Split the list into two halves
+    prev.next = null
+
+    // Sort left half
+    let left = sortList(head)
+
+    // Sort right half
+    let right = sortList(slow)
+
+    // Merge both sorted halves
+    return merge(left, right)
+}
+
+
+merge(l1, l2) {
+
+    // Temporary node
+    let dummy = new Node(0)
+
+    // Tail of merged list
+    let tail = dummy
+
+    while (l1 && l2) {
+
+        if (l1.value <= l2.value) {
+            tail.next = l1
+            l1 = l1.next
+        } else {
+            tail.next = l2
+            l2 = l2.next
+        }
+
+        tail = tail.next
+    }
+
+    // Attach remaining nodes
+    if (l1) {
+        tail.next = l1
+    }
+
+    if (l2) {
+        tail.next = l2
+    }
+
+    return dummy.next
+}
+
+  
 
 
 

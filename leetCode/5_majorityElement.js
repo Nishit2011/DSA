@@ -1,23 +1,26 @@
-/**
- * Problem: Find the element that appears more than n/2 times.
- * Trick: Boyer-Moore Voting — maintain a candidate and counter. If counter is 0, set new candidate. Increment if same, decrement if different.
- * Time: O(n) | Space: O(1)
- */
-function solve(nums){
-    let candidate = null
-    let count = 0
+function solve(nums) {
+    let candidate = null;
+    let count = 0;
 
-    for(let num of nums){
-        if(count === 0){
-            candidate = num
+    // First pass: Find potential candidate
+    for (let num of nums) {
+        if (count === 0) {
+            candidate = num;
         }
-        if(candidate === num){
-            count++
-        }else{
-            count--
+        if (candidate === num) {
+            count++;
+        } else {
+            count--;
         }
     }
-    return candidate
+
+    // Optional second pass: Verify if candidate is actually the majority element
+    let actualCount = 0;
+    for (let num of nums) {
+        if (num === candidate) actualCount++;
+    }
+
+    return actualCount > Math.floor(nums.length / 2) ? candidate : null;
 }
 
 
