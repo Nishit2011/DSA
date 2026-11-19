@@ -264,9 +264,64 @@ merge(l1, l2) {
     return dummy.next
 }
 
-  
+  rotate(k){
+    if(!this.head || !this.head.next){
+        return
+    }
 
+    let tail = this.head;
+    let length = 1
 
+    while(tail.next){
+
+        tail = tail.next
+        length++
+    }
+    k= k%length
+    if(k===0) return
+
+    //connects tail to head to form a circle
+    tail.next = this.head
+
+    let steps = length - k - 1
+    let newTail = this.head
+
+    while(steps > 0){
+        newTail = newTail.next
+        steps--
+    }
+      // Break the circle
+    this.head= newTail.next
+    newTail.next = null
+
+  }
+
+partition(x){
+    let lessDummy = new Node(0)
+    let greaterDummy = new Node(0)
+
+    let less = lessDummy
+    let greater = greaterDummy
+
+    let current = this.head
+
+    while(current){
+        if(current.value<x){
+            less.next = current
+            less = less.next
+        }else{
+            greater.next = current
+            greater = greater.next
+        }
+        current = current.next
+    }
+
+    greater.next = null
+    less.next = greater.next
+
+    return lessDummy.next
+
+    }
 
    
 
